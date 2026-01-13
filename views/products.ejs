@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products - SENU MODZ</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<nav>
+    <div class="logo">SENU MODZ</div>
+    <div class="hamburger"><div></div><div></div><div></div></div>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="products">
+    <h1>Our Products</h1>
+    <% products.forEach(product => { %>
+        <div class="product-card">
+            <h2><%= product.name %></h2>
+            <p><%= product.description %></p>
+            <p class="price">LKR <%= product.price %></p>
+            <a href="https://wa.me/94743903048" class="btn">Contact on WhatsApp</a>
+        </div>
+    <% }) %>
+</section>
+<script src="/script.js"></script>
+</body>
+</html>

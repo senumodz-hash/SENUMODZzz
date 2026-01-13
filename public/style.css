@@ -1,0 +1,79 @@
+/* ==========================
+   General Reset & Fonts
+=========================== */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background-color: #0f0f0f; color: #fff; line-height: 1.6; }
+
+/* ==========================
+   Loader
+=========================== */
+#loader {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #111; display: flex; justify-content: center; align-items: center; flex-direction: column; z-index: 9999;
+}
+#loader h1 { font-size: 3rem; animation: fadeIn 2s ease-in-out infinite alternate; color: #00ffea; }
+#loader p { margin-top: 10px; color: #aaa; text-align: center; }
+.spinner {
+    margin-top: 20px; width: 50px; height: 50px;
+    border: 5px solid #555; border-top: 5px solid #00ffea;
+    border-radius: 50%; animation: spin 1s linear infinite;
+}
+.hidden { display: none; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes fadeIn { 0% { opacity: 0.2; transform: scale(0.9); } 100% { opacity: 1; transform: scale(1); } }
+
+/* ==========================
+   Navigation
+=========================== */
+nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 50px; background-color: #111; position: sticky; top: 0; z-index: 100;
+}
+nav .logo img { height: 40px; object-fit: contain; }
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 25px; }
+nav ul li a { color: #fff; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+nav ul li a:hover { color: #00ffea; }
+
+/* Hamburger Menu */
+.hamburger { display: none; flex-direction: column; cursor: pointer; }
+.hamburger div { width: 25px; height: 3px; background: #00ffea; margin: 4px 0; transition: 0.4s; }
+
+/* ==========================
+   Sections
+=========================== */
+section { padding: 80px 50px; text-align: center; }
+.hero h1 { font-size: 3rem; margin-bottom: 20px; color: #00ffea; }
+.hero p { font-size: 1.2rem; margin-bottom: 30px; }
+.btn {
+    padding: 12px 25px; background-color: #00ffea; color: #000;
+    text-decoration: none; font-weight: bold; border-radius: 8px; transition: background 0.3s;
+}
+.btn:hover { background-color: #00c7b0; }
+
+/* Products Preview Cards */
+.products-preview .products { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px; }
+.product-card {
+    background-color: #1a1a1a; padding: 25px; border-radius: 10px; width: 250px; text-align: center;
+    transition: transform 0.3s;
+}
+.product-card:hover { transform: translateY(-10px); }
+.product-card h3 { color: #00ffea; margin-bottom: 10px; }
+.product-card p { margin-bottom: 10px; }
+.product-card .price { font-weight: bold; font-size: 1.2rem; color: #00ffea; }
+
+/* About Preview Section */
+.about-preview { margin-top: 60px; }
+.about-preview h2 { color: #00ffea; margin-bottom: 15px; }
+
+/* ==========================
+   Responsive
+=========================== */
+@media screen and (max-width: 768px) {
+    nav ul { display: none; flex-direction: column; background: #111; position: absolute; top: 60px; right: 0; width: 200px; border-left: 1px solid #00ffea; }
+    nav ul.show { display: flex; }
+    .hamburger { display: flex; }
+    nav ul li { margin: 15px 0; }
+    section { padding: 60px 20px; }
+    .products-preview .products { flex-direction: column; align-items: center; }
+}
